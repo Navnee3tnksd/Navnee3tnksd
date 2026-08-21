@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Navneet Kumar — AI • Data Science • Technology • Innovation</title>
+<meta name="description" content="Navneet Kumar builds AI and data science systems, explains complex technology, and develops long-term innovation concepts including VAIBHAVI 2047.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#060a16;
+    --panel:#0c1226;
+    --panel-2:#111a35;
+    --line:rgba(148,168,224,0.14);
+    --electric:#3d6bff;
+    --cyan:#22d3ee;
+    --violet:#8b5cf6;
+    --text:#dbe4ff;
+    --text-dim:#8b96b8;
+    --text-dimmer:#5c6690;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--void);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--electric); color:#fff;}
+  h1,h2,h3,h4,.display{font-family:'Space Grotesk',sans-serif;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 32px;}
+  @media(max-width:640px){.wrap{padding:0 20px;}}
+
+  /* background texture */
+  .bg-grid{
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+    background-image:
+      linear-gradient(rgba(148,168,224,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148,168,224,0.05) 1px, transparent 1px);
+    background-size:64px 64px;
+    mask-image:radial-gradient(ellipse 80% 50% at 50% 0%, #000 40%, transparent 100%);
+  }
+  .glow-a{position:fixed; top:-200px; left:-150px; width:600px; height:600px; background:radial-gradient(circle, rgba(61,107,255,0.25), transparent 70%); filter:blur(40px); z-index:0; pointer-events:none;}
+  .glow-b{position:fixed; top:400px; right:-200px; width:500px; height:500px; background:radial-gradient(circle, rgba(139,92,246,0.18), transparent 70%); filter:blur(40px); z-index:0; pointer-events:none;}
+
+  /* nav */
+  nav{
+    position:sticky; top:0; z-index:50;
+    backdrop-filter:blur(16px);
+    background:rgba(6,10,22,0.72);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex; align-items:center; justify-content:space-between; height:68px;}
+  .brand{font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:17px; letter-spacing:0.02em; display:flex; align-items:center; gap:10px;}
+  .brand-mark{width:28px; height:28px; border-radius:8px; background:linear-gradient(135deg,var(--electric),var(--violet)); display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; color:#fff;}
+  .nav-links{display:flex; gap:28px; font-size:13.5px; color:var(--text-dim);}
+  .nav-links a{transition:color .2s;}
+  .nav-links a:hover{color:var(--cyan);}
+  #navToggle{display:none; background:none; border:none; color:var(--text); font-size:22px; cursor:pointer;}
+  @media(max-width:860px){
+    .nav-links{position:fixed; top:68px; left:0; right:0; background:var(--panel); flex-direction:column; padding:20px 32px; gap:16px; border-bottom:1px solid var(--line); transform:translateY(-130%); transition:transform .3s; }
+    .nav-links.open{transform:translateY(0);}
+    #navToggle{display:block;}
+  }
+
+  section{position:relative; z-index:1; padding:96px 0;}
+  @media(max-width:640px){section{padding:64px 0;}}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--cyan); display:flex; align-items:center; gap:10px; margin-bottom:18px;
+  }
+  .eyebrow::before{content:''; width:22px; height:1px; background:var(--cyan);}
+  h2.section-title{font-size:clamp(28px,4vw,40px); font-weight:600; letter-spacing:-0.01em; margin-bottom:14px;}
+  .section-sub{color:var(--text-dim); font-size:15.5px; max-width:640px; margin-bottom:48px;}
+
+  /* HERO */
+  .hero{padding-top:88px; padding-bottom:60px; min-height:92vh; display:flex; align-items:center;}
+  .hero-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:60px; align-items:center;}
+  @media(max-width:900px){.hero-grid{grid-template-columns:1fr;} .hero-visual{order:-1; margin-bottom:20px;}}
+  .hero-tag{font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--text-dimmer); letter-spacing:0.08em; margin-bottom:22px;}
+  .hero h1{font-size:clamp(38px,6vw,64px); font-weight:700; line-height:1.04; letter-spacing:-0.02em; margin-bottom:22px;}
+  .hero h1 .grad{background:linear-gradient(100deg,var(--electric),var(--cyan) 60%,var(--violet)); -webkit-background-clip:text; background-clip:text; color:transparent;}
+  .hero p.lede{font-size:17px; color:var(--text-dim); max-width:520px; margin-bottom:34px;}
+  .cycle-strip{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:38px;}
+  .cycle-strip span{font-family:'IBM Plex Mono',monospace; font-size:12px; padding:6px 12px; border:1px solid var(--line); border-radius:100px; color:var(--text-dim);}
+  .cycle-strip span.on{color:var(--cyan); border-color:rgba(34,211,238,0.4);}
+  .cta-row{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    padding:13px 24px; border-radius:10px; font-size:14px; font-weight:500; display:inline-flex; align-items:center; gap:8px;
+    transition:transform .18s, box-shadow .18s;
+  }
+  .btn-primary{background:linear-gradient(100deg,var(--electric),var(--violet)); color:#fff; box-shadow:0 8px 24px rgba(61,107,255,0.25);}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 12px 30px rgba(61,107,255,0.35);}
+  .btn-ghost{border:1px solid var(--line); color:var(--text);}
+  .btn-ghost:hover{border-color:var(--cyan); color:var(--cyan);}
+
+  /* hero visual: five-node orbit (Panch Mahabhuta signature) */
+  .hero-visual{position:relative; height:420px; display:flex; align-items:center; justify-content:center;}
+  .orbit-svg{width:100%; max-width:420px; height:auto;}
+  .orbit-ring{fill:none; stroke:rgba(148,168,224,0.16); stroke-width:1;}
+  .orbit-node-label{font-family:'IBM Plex Mono',monospace; font-size:9.5px; fill:var(--text-dim); text-anchor:middle;}
+  .orbit-core-label{font-family:'Space Grotesk',sans-serif; font-size:12px; font-weight:600; fill:var(--text); text-anchor:middle;}
+  @keyframes spin1{from{transform:rotate(0deg);} to{transform:rotate(360deg);}}
+  @keyframes spin2{from{transform:rotate(360deg);} to{transform:rotate(0deg);}}
+  .spin-cw{animation:spin1 46s linear infinite; transform-origin:210px 210px;}
+  .spin-ccw{animation:spin2 60s linear infinite; transform-origin:210px 210px;}
+  @media (prefers-reduced-motion: reduce){ .spin-cw,.spin-ccw{animation:none;} }
+
+  /* cards / glass */
+  .glass{
+    background:linear-gradient(160deg, rgba(255,255,255,0.035), rgba(255,255,255,0.008));
+    border:1px solid var(--line);
+    border-radius:16px;
+    backdrop-filter:blur(6px);
+  }
+  .card-hover{transition:border-color .2s, transform .2s;}
+  .card-hover:hover{border-color:rgba(61,107,255,0.4); transform:translateY(-3px);}
+
+  /* about / education */
+  .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
+  @media(max-width:860px){.about-grid{grid-template-columns:1fr; gap:36px;}}
+  .about-copy p{color:var(--text-dim); margin-bottom:16px; font-size:15px;}
+  .timeline{border-left:1px solid var(--line); padding-left:24px; display:flex; flex-direction:column; gap:26px;}
+  .tl-item{position:relative;}
+  .tl-item::before{content:''; position:absolute; left:-29px; top:4px; width:9px; height:9px; border-radius:50%; background:var(--cyan); box-shadow:0 0 0 4px rgba(34,211,238,0.15);}
+  .tl-item h4{font-size:15px; font-weight:600; margin-bottom:4px;}
+  .tl-item .tl-meta{font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--text-dimmer); margin-bottom:6px;}
+  .tl-item p{font-size:13.5px; color:var(--text-dim);}
+
+  /* skills */
+  .skill-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
+  @media(max-width:860px){.skill-grid{grid-template-columns:repeat(2,1fr);}}
+  .skill-card{padding:24px 20px;}
+  .skill-card h4{font-size:13px; text-transform:uppercase; letter-spacing:0.08em; color:var(--cyan); margin-bottom:14px; font-family:'IBM Plex Mono',monospace; font-weight:500;}
+  .skill-tags{display:flex; flex-wrap:wrap; gap:6px;}
+  .skill-tags span{font-size:12px; padding:4px 10px; background:rgba(255,255,255,0.04); border:1px solid var(--line); border-radius:100px; color:var(--text-dim);}
+
+  /* knowledge hub tabs */
+  .tabs{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:28px;}
+  .tab-btn{
+    font-family:'IBM Plex Mono',monospace; font-size:12.5px; padding:9px 16px; border-radius:9px; border:1px solid var(--line); color:var(--text-dim); cursor:pointer; background:transparent; transition:all .2s;
+  }
+  .tab-btn.active{color:#fff; background:linear-gradient(100deg,var(--electric),var(--violet)); border-color:transparent;}
+  .tab-panel{display:none;}
+  .tab-panel.active{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
+  @media(max-width:860px){.tab-panel.active{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.tab-panel.active{grid-template-columns:1fr;}}
+  .topic-chip{padding:16px 18px; font-size:13.5px; color:var(--text); display:flex; align-items:center; justify-content:space-between;}
+  .topic-chip small{font-family:'IBM Plex Mono',monospace; color:var(--text-dimmer); font-size:11px;}
+
+  /* projects */
+  .project-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  @media(max-width:900px){.project-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:640px){.project-grid{grid-template-columns:1fr;}}
+  .project-card{padding:26px; display:flex; flex-direction:column; gap:12px; min-height:220px;}
+  .project-card .ptag{font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--violet); text-transform:uppercase; letter-spacing:0.08em;}
+  .project-card h4{font-size:16.5px; font-weight:600;}
+  .project-card p{font-size:13px; color:var(--text-dim); flex:1;}
+  .project-card .plink{font-size:12.5px; color:var(--text-dimmer); font-family:'IBM Plex Mono',monospace; display:flex; align-items:center; gap:6px;}
+  .pipeline{display:flex; flex-wrap:wrap; gap:6px; margin-top:6px;}
+  .pipeline span{font-size:10.5px; font-family:'IBM Plex Mono',monospace; padding:3px 8px; background:rgba(61,107,255,0.08); border:1px solid rgba(61,107,255,0.2); border-radius:6px; color:#a9bdff;}
+
+  /* idea vault */
+  .idea-card{padding:30px; margin-bottom:18px;}
+  .idea-head{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-bottom:14px;}
+  .idea-head h3{font-size:20px; font-weight:600;}
+  .idea-status{font-family:'IBM Plex Mono',monospace; font-size:10.5px; padding:5px 11px; border-radius:100px; letter-spacing:0.05em;}
+  .status-concept{background:rgba(139,92,246,0.12); color:#c4b5fd; border:1px solid rgba(139,92,246,0.3);}
+  .idea-body{display:grid; grid-template-columns:repeat(2,1fr); gap:22px;}
+  @media(max-width:700px){.idea-body{grid-template-columns:1fr;}}
+  .idea-field h5{font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-dimmer); margin-bottom:6px; font-family:'IBM Plex Mono',monospace;}
+  .idea-field p{font-size:13.5px; color:var(--text-dim);}
+
+  /* explainers */
+  .explainer-list{display:flex; flex-direction:column; gap:10px;}
+  .explainer-row{
+    display:flex; align-items:center; justify-content:space-between; padding:18px 22px; cursor:pointer;
+  }
+  .explainer-row .exq{font-size:14.5px; font-weight:500;}
+  .explainer-row .exarrow{color:var(--text-dimmer); transition:transform .2s;}
+  .explainer-row.open .exarrow{transform:rotate(90deg); color:var(--cyan);}
+  .explainer-answer{display:none; padding:0 22px 20px; color:var(--text-dim); font-size:13.5px; line-height:1.7;}
+  .explainer-answer .flow{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;}
+  .explainer-answer .flow span{font-family:'IBM Plex Mono',monospace; font-size:11px; padding:5px 10px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.2); border-radius:7px; color:#8de8f2;}
+  .explainer-answer .flow .arrow{background:none; border:none; color:var(--text-dimmer);}
+  .explainer-row.open + .explainer-answer{display:block;}
+
+  /* thinking */
+  .think-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+  @media(max-width:860px){.think-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.think-grid{grid-template-columns:1fr;}}
+  .think-card{padding:22px;}
+  .think-card h4{font-size:14.5px; margin-bottom:8px;}
+  .think-card p{font-size:12.5px; color:var(--text-dim);}
+  .leader-strip{display:flex; flex-direction:column; gap:14px; margin-top:36px;}
+  .leader-row{display:flex; align-items:center; gap:18px; padding:16px 20px;}
+  .leader-name{font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:14px; width:140px; flex-shrink:0;}
+  .leader-lessons{display:flex; gap:8px; flex-wrap:wrap;}
+  .leader-lessons span{font-size:12px; color:var(--text-dim); font-family:'IBM Plex Mono',monospace;}
+  .leader-lessons span:not(:last-child)::after{content:'·'; margin-left:8px; color:var(--text-dimmer);}
+
+  /* contact/footer */
+  footer{border-top:1px solid var(--line); padding:60px 0 40px;}
+  .foot-grid{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px;}
+  .foot-links{display:flex; gap:22px; flex-wrap:wrap;}
+  .foot-links a{color:var(--text-dim); font-size:13.5px; transition:color .2s;}
+  .foot-links a:hover{color:var(--cyan);}
+  .foot-note{font-size:12px; color:var(--text-dimmer); margin-top:30px; font-family:'IBM Plex Mono',monospace;}
+
+  .roadmap-note{
+    margin-top:56px; padding:22px 26px; border-radius:14px; border:1px dashed rgba(148,168,224,0.25); background:rgba(255,255,255,0.015);
+  }
+  .roadmap-note h4{font-size:13px; color:var(--cyan); font-family:'IBM Plex Mono',monospace; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:10px;}
+  .roadmap-note p{font-size:13px; color:var(--text-dim);}
+
+  .fill-me{color:#f0b354; font-style:italic;}
+
+  /* story */
+  .story-flow{display:flex; flex-direction:column; gap:0; margin-top:10px;}
+  .story-step{display:grid; grid-template-columns:110px 1fr; gap:24px; padding:26px 0; border-bottom:1px solid var(--line);}
+  .story-step:last-child{border-bottom:none;}
+  @media(max-width:640px){.story-step{grid-template-columns:1fr; gap:8px;}}
+  .story-step .s-phase{font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--cyan); letter-spacing:0.06em; text-transform:uppercase;}
+  .story-step h4{font-size:16px; margin-bottom:8px;}
+  .story-step p{font-size:14px; color:var(--text-dim);}
+
+  /* articles */
+  .article-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  @media(max-width:900px){.article-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:640px){.article-grid{grid-template-columns:1fr;}}
+  .article-card{padding:0; overflow:hidden; display:flex; flex-direction:column;}
+  .article-cover{
+    height:110px; background:linear-gradient(135deg, rgba(61,107,255,0.18), rgba(139,92,246,0.18));
+    display:flex; align-items:center; justify-content:center; position:relative;
+  }
+  .article-cover .a-icon{font-family:'Space Grotesk',sans-serif; font-size:26px; font-weight:700; color:rgba(255,255,255,0.7);}
+  .article-body{padding:22px;}
+  .article-meta{display:flex; gap:10px; align-items:center; font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--text-dimmer); margin-bottom:10px; flex-wrap:wrap;}
+  .article-meta .a-cat{color:var(--violet);}
+  .article-body h4{font-size:15px; margin-bottom:8px; line-height:1.35;}
+  .article-body p{font-size:12.5px; color:var(--text-dim); margin-bottom:14px;}
+  .article-status{font-size:10.5px; font-family:'IBM Plex Mono',monospace; padding:3px 9px; border-radius:100px; border:1px solid rgba(148,168,224,0.25); color:var(--text-dimmer); display:inline-block;}
+
+  /* interests */
+  .interest-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:14px;}
+  @media(max-width:860px){.interest-grid{grid-template-columns:repeat(2,1fr);}}
+  .interest-card{padding:22px 18px; text-align:center;}
+  .interest-card .i-icon{font-size:22px; margin-bottom:10px;}
+  .interest-card h4{font-size:13.5px; margin-bottom:6px;}
+  .interest-card p{font-size:11.5px; color:var(--text-dim);}
+</style>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+<div class="glow-a"></div>
+<div class="glow-b"></div>
+
+<nav>
+  <div class="wrap nav-inner">
+    <div class="brand"><span class="brand-mark">NK</span> NAVNEET KUMAR</div>
+    <button id="navToggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#story">My Story</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#knowledge">Knowledge Hub</a>
+      <a href="#projects">Projects</a>
+      <a href="#articles">Articles</a>
+      <a href="#ideas">Idea Vault</a>
+      <a href="#explainers">Explainers</a>
+      <a href="#thinking">Thinking</a>
+      <a href="#interests">Interests</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-tag mono">// AI · DATA SCIENCE · TECHNOLOGY · INNOVATION</div>
+      <h1>Building intelligent systems.<br><span class="grad">Explaining complex technology.</span></h1>
+      <p class="lede">I'm Navneet Kumar — I work across AI, machine learning, and data science, and I write and design to make advanced technology understandable. Alongside applied projects, I develop long-horizon research concepts like <strong>VAIBHAVI 2047</strong>.</p>
+      <div class="cycle-strip mono">
+        <span class="on">BUILD</span><span>LEARN</span><span class="on">EXPLAIN</span><span>CREATE</span><span class="on">PUBLISH</span><span>IMPACT</span>
+      </div>
+      <div class="cta-row">
+        <a href="#projects" class="btn btn-primary">View Projects →</a>
+        <a href="#ideas" class="btn btn-ghost">Explore Idea Vault</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <svg class="orbit-svg" viewBox="0 0 420 420">
+        <circle class="orbit-ring" cx="210" cy="210" r="170"/>
+        <circle class="orbit-ring" cx="210" cy="210" r="120"/>
+        <circle class="orbit-ring" cx="210" cy="210" r="70"/>
+        <text class="orbit-core-label" x="210" y="205">NAVNEET</text>
+        <text class="orbit-core-label" x="210" y="222" style="font-size:9px; fill:#8b96b8;">AI · DATA · TECH</text>
+
+        <g class="spin-cw">
+          <circle cx="210" cy="40" r="15" fill="url(#g1)"/>
+          <text class="orbit-node-label" x="210" y="20">AKASH · AI</text>
+        </g>
+        <g class="spin-cw" style="transform-origin:210px 210px; transform:rotate(72deg);">
+          <circle cx="210" cy="40" r="15" fill="url(#g2)"/>
+        </g>
+        <g class="spin-ccw">
+          <circle cx="380" cy="210" r="12" fill="url(#g3)"/>
+          <text class="orbit-node-label" x="380" y="234">JAL · DATA</text>
+        </g>
+        <g class="spin-ccw" style="transform-origin:210px 210px; transform:rotate(144deg);">
+          <circle cx="380" cy="210" r="12" fill="url(#g1)"/>
+        </g>
+        <g class="spin-cw" style="transform-origin:210px 210px; transform:rotate(216deg);">
+          <circle cx="210" cy="40" r="10" fill="url(#g2)"/>
+        </g>
+
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#3d6bff"/><stop offset="100%" stop-color="#22d3ee"/>
+          </linearGradient>
+          <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#3d6bff"/>
+          </linearGradient>
+          <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#8b5cf6"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="eyebrow">01 · About</div>
+    <h2 class="section-title">Working across AI, data, and long-term technology vision</h2>
+    <div class="about-grid" style="margin-top:20px;">
+      <div class="about-copy">
+        <p>My work sits at the intersection of applied machine learning and data science — building models, cleaning and exploring data, and shipping small working tools — and a longer-range interest in how technologies like AI, robotics, and environmental science could be organized around Indian philosophical frameworks over the next two decades.</p>
+        <p>I care about the "explain" step as much as the "build" step: a model or a concept is only useful if someone else can understand why it works. That's why articles, explainers, and structured write-ups sit alongside the project work here, not as an afterthought.</p>
+        <p class="fill-me">Add 2–3 more sentences here on your personal motivation / philosophy in your own words.</p>
+      </div>
+      <div class="timeline">
+        <div class="tl-item">
+          <h4>Foundation</h4>
+          <div class="tl-meta">Computer Science · Programming</div>
+          <p>Core CS fundamentals, Python, and early data analytics coursework.</p>
+        </div>
+        <div class="tl-item">
+          <h4>Data Science &amp; ML</h4>
+          <div class="tl-meta">Statistics · EDA · Feature Engineering</div>
+          <p>Moved into applied data science — statistics, exploratory analysis, and classical ML.</p>
+        </div>
+        <div class="tl-item">
+          <h4>Deep Learning &amp; NLP / CV / RL</h4>
+          <div class="tl-meta">Neural Networks · Transformers</div>
+          <p>Extended into deep learning, NLP, computer vision, and reinforcement learning fundamentals.</p>
+        </div>
+        <div class="tl-item">
+          <h4>Generative AI &amp; Applied Projects</h4>
+          <div class="tl-meta">GenAI · Deployment · Cloud</div>
+          <p>Applying generative AI and cloud tooling to end-to-end projects, from data to dashboard.</p>
+        </div>
+        <div class="tl-item">
+          <h4>Research &amp; Content</h4>
+          <div class="tl-meta">Writing · Concepts · VAIBHAVI 2047</div>
+          <p>Publishing explainers and developing longer-range research concepts.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MY STORY -->
+<section id="story">
+  <div class="wrap">
+    <div class="eyebrow">— My Story</div>
+    <h2 class="section-title">From curiosity to a research vision</h2>
+    <p class="section-sub">The through-line connecting coursework, applied projects, and a 22-year research initiative. <span class="fill-me">Replace each step below with your own words — this is a starting structure, not your final bio.</span></p>
+    <div class="story-flow">
+      <div class="story-step">
+        <div class="s-phase">Origin</div>
+        <div>
+          <h4>Starting in Patna, with computer science as the entry point</h4>
+          <p class="fill-me">Add how you first got interested in computing / data — a specific moment, course, or problem that pulled you in.</p>
+        </div>
+      </div>
+      <div class="story-step">
+        <div class="s-phase">Turn</div>
+        <div>
+          <h4>Moving from programming into data and AI</h4>
+          <p class="fill-me">Add the specific project, course, or realization that shifted your focus toward data science and machine learning.</p>
+        </div>
+      </div>
+      <div class="story-step">
+        <div class="s-phase">Widening</div>
+        <div>
+          <h4>Applied projects across NLP, vision, and generative AI</h4>
+          <p>Building hands-on projects — from scam detection to generative models — to move from theory to working systems.</p>
+        </div>
+      </div>
+      <div class="story-step">
+        <div class="s-phase">Synthesis</div>
+        <div>
+          <h4>Connecting technology to a longer-term vision: VAIBHAVI 2047</h4>
+          <p>Bringing AI, bio-robotics, and environmental science together with Vedic philosophical frameworks into a single long-horizon research initiative.</p>
+        </div>
+      </div>
+      <div class="story-step">
+        <div class="s-phase">Now</div>
+        <div>
+          <h4>Building, explaining, and publishing in parallel</h4>
+          <p class="fill-me">Add what you're currently focused on — the specific project, course, or milestone happening right now.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" style="padding-top:20px;">
+  <div class="wrap">
+    <div class="eyebrow">02 · Education</div>
+    <h2 class="section-title">Academic background</h2>
+    <p class="section-sub">Listed as provided — replace or expand with exact program names, years, and any verifiable links (transcripts, program pages) before publishing.</p>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;" class="edu-grid">
+      <div class="glass card-hover" style="padding:24px;">
+        <div class="mono" style="font-size:11px; color:var(--cyan); margin-bottom:10px;">DEGREE</div>
+        <h4 style="font-size:15.5px; margin-bottom:6px;">B.Sc. Computer Science &amp; Data Analytics</h4>
+        <p style="font-size:13px; color:var(--text-dim);">IIT Patna <span class="fill-me">— add exact program name / years</span></p>
+      </div>
+      <div class="glass card-hover" style="padding:24px;">
+        <div class="mono" style="font-size:11px; color:var(--violet); margin-bottom:10px;">LEARNING TRACK</div>
+        <h4 style="font-size:15.5px; margin-bottom:6px;">Data Science &amp; Machine Learning</h4>
+        <p style="font-size:13px; color:var(--text-dim);">Coursework / learning experience associated with IIT Mandi <span class="fill-me">— confirm exact program title</span></p>
+      </div>
+      <div class="glass card-hover" style="padding:24px;">
+        <div class="mono" style="font-size:11px; color:#8de8f2; margin-bottom:10px;">FOUNDATIONS</div>
+        <h4 style="font-size:15.5px; margin-bottom:6px;">Physics</h4>
+        <p style="font-size:13px; color:var(--text-dim);">Academic physics background <span class="fill-me">— add level / institution / years</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="eyebrow">03 · Skills</div>
+    <h2 class="section-title">Technical toolkit</h2>
+    <div class="skill-grid">
+      <div class="glass card-hover skill-card">
+        <h4>Programming</h4>
+        <div class="skill-tags"><span>Python</span><span>SQL</span><span>C</span><span>C++</span><span>Java</span><span>JavaScript</span></div>
+      </div>
+      <div class="glass card-hover skill-card">
+        <h4>AI / ML</h4>
+        <div class="skill-tags"><span>Machine Learning</span><span>Deep Learning</span><span>NLP</span><span>Computer Vision</span><span>RL</span><span>Generative AI</span></div>
+      </div>
+      <div class="glass card-hover skill-card">
+        <h4>Data</h4>
+        <div class="skill-tags"><span>Pandas</span><span>NumPy</span><span>Scikit-learn</span><span>Power BI</span><span>Excel</span><span>Data Storytelling</span></div>
+      </div>
+      <div class="glass card-hover skill-card">
+        <h4>Cloud &amp; Tools</h4>
+        <div class="skill-tags"><span>Azure</span><span>AWS</span><span>MLflow</span><span>Streamlit</span><span>Git / GitHub</span><span>Jupyter</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KNOWLEDGE HUB -->
+<section id="knowledge">
+  <div class="wrap">
+    <div class="eyebrow">04 · Knowledge Hub</div>
+    <h2 class="section-title">Navneet Explains</h2>
+    <p class="section-sub">A structured library of topics — each is meant to expand into a full explainer page with a simple explanation, technical depth, code, and real-world application.</p>
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="t-ai">AI Explained</button>
+      <button class="tab-btn" data-tab="t-ds">Data Science</button>
+      <button class="tab-btn" data-tab="t-nlp">NLP</button>
+      <button class="tab-btn" data-tab="t-cs">Computer Science</button>
+      <button class="tab-btn" data-tab="t-cloud">Cloud</button>
+    </div>
+    <div class="tab-panel active" id="t-ai">
+      <div class="glass topic-chip">What is AI? <small>intro</small></div>
+      <div class="glass topic-chip">Machine Learning <small>core</small></div>
+      <div class="glass topic-chip">Deep Learning <small>core</small></div>
+      <div class="glass topic-chip">Generative AI <small>trend</small></div>
+      <div class="glass topic-chip">LLMs <small>trend</small></div>
+      <div class="glass topic-chip">AI Agents <small>trend</small></div>
+      <div class="glass topic-chip">Multimodal AI <small>trend</small></div>
+      <div class="glass topic-chip">Explainable AI <small>applied</small></div>
+      <div class="glass topic-chip">Recommendation Systems <small>applied</small></div>
+    </div>
+    <div class="tab-panel" id="t-ds">
+      <div class="glass topic-chip">EDA <small>fundamentals</small></div>
+      <div class="glass topic-chip">Regression <small>modeling</small></div>
+      <div class="glass topic-chip">Classification <small>modeling</small></div>
+      <div class="glass topic-chip">Clustering <small>modeling</small></div>
+      <div class="glass topic-chip">Statistics <small>fundamentals</small></div>
+      <div class="glass topic-chip">Feature Engineering <small>pipeline</small></div>
+      <div class="glass topic-chip">Model Evaluation <small>pipeline</small></div>
+    </div>
+    <div class="tab-panel" id="t-nlp">
+      <div class="glass topic-chip">Tokenization <small>basics</small></div>
+      <div class="glass topic-chip">Stemming &amp; Lemmatization <small>basics</small></div>
+      <div class="glass topic-chip">POS Tagging <small>basics</small></div>
+      <div class="glass topic-chip">N-grams <small>basics</small></div>
+      <div class="glass topic-chip">TF-IDF <small>representation</small></div>
+      <div class="glass topic-chip">Word Embeddings <small>representation</small></div>
+      <div class="glass topic-chip">Summarization <small>applied</small></div>
+    </div>
+    <div class="tab-panel" id="t-cs">
+      <div class="glass topic-chip">DSA <small>core</small></div>
+      <div class="glass topic-chip">Operating Systems <small>core</small></div>
+      <div class="glass topic-chip">DBMS <small>core</small></div>
+      <div class="glass topic-chip">Computer Networks <small>core</small></div>
+      <div class="glass topic-chip">Software Engineering <small>practice</small></div>
+    </div>
+    <div class="tab-panel" id="t-cloud">
+      <div class="glass topic-chip">Azure <small>platform</small></div>
+      <div class="glass topic-chip">AWS <small>platform</small></div>
+      <div class="glass topic-chip">Microsoft Fabric <small>platform</small></div>
+      <div class="glass topic-chip">Data Engineering <small>pipeline</small></div>
+      <div class="glass topic-chip">ML Deployment <small>pipeline</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="eyebrow">05 · Project Lab</div>
+    <h2 class="section-title">Selected work</h2>
+    <p class="section-sub">Replace the <span class="fill-me">GitHub / demo links</span> with your real repository and deployment URLs before publishing.</p>
+    <div class="project-grid">
+      <div class="glass card-hover project-card">
+        <div class="ptag">Applied ML · Explainability</div>
+        <h4>Spot the Scam</h4>
+        <p>End-to-end scam-detection pipeline: data processing and feature engineering, model training and evaluation, SHAP explainability, and a Streamlit dashboard for live scoring.</p>
+        <div class="pipeline"><span>Data</span><span>Features</span><span>Model</span><span>SHAP</span><span>Streamlit</span></div>
+        <div class="plink">↗ <span class="fill-me">github.com/yourhandle/spot-the-scam</span></div>
+      </div>
+      <div class="glass card-hover project-card">
+        <div class="ptag">NLP</div>
+        <h4>Sentiment Analysis</h4>
+        <p>Text classification pipeline for sentiment, covering preprocessing, vectorization, and model comparison.</p>
+        <div class="plink">↗ <span class="fill-me">add repo link</span></div>
+      </div>
+      <div class="glass card-hover project-card">
+        <div class="ptag">Generative AI</div>
+        <h4>GAN / CycleGAN</h4>
+        <p>Generative adversarial network experiments, including image-to-image translation with CycleGAN.</p>
+        <div class="plink">↗ <span class="fill-me">add repo link</span></div>
+      </div>
+      <div class="glass card-hover project-card">
+        <div class="ptag">Reinforcement Learning</div>
+        <h4>RL Experiments</h4>
+        <p>Reinforcement learning agents trained and evaluated in simulated environments.</p>
+        <div class="plink">↗ <span class="fill-me">add repo link</span></div>
+      </div>
+      <div class="glass card-hover project-card">
+        <div class="ptag">NLP · Generation</div>
+        <h4>NLG Summarizer</h4>
+        <p>Natural-language generation pipeline for automatic text summarization.</p>
+        <div class="plink">↗ <span class="fill-me">add repo link</span></div>
+      </div>
+      <div class="glass card-hover project-card">
+        <div class="ptag">Computer Vision / Multimodal</div>
+        <h4>Computer Vision &amp; Multimodal AI</h4>
+        <p>Vision and multimodal experiments combining image and text inputs.</p>
+        <div class="plink">↗ <span class="fill-me">add repo link</span></div>
+      </div>
+    </div>
+    <div class="roadmap-note">
+      <h4>Wiring up live GitHub stats</h4>
+      <p>The homepage counters (repos, stars, commits) should pull from the GitHub REST API (<span class="mono">/users/&lt;handle&gt;/repos</span>) at build or request time rather than being typed in by hand — that keeps every number accurate automatically. I can wire this in once you give me your GitHub username and hosting choice (Vercel / GitHub Pages / Netlify).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLES -->
+<section id="articles">
+  <div class="wrap">
+    <div class="eyebrow">— Articles &amp; Writings</div>
+    <h2 class="section-title">Ideas worth writing down</h2>
+    <p class="section-sub">Placeholder entries structured for a real publishing system — swap in your actual pieces, or start writing to these titles. <span class="fill-me">Mark each as Draft / Published and add real dates once written.</span></p>
+    <div class="article-grid">
+      <div class="glass card-hover article-card">
+        <div class="article-cover"><span class="a-icon">01</span></div>
+        <div class="article-body">
+          <div class="article-meta"><span class="a-cat">AI</span><span>·</span><span>~6 min read</span></div>
+          <h4>What Generative AI Actually Learns</h4>
+          <p>A plain-language breakdown of what a generative model is really doing under the hood — and what it isn't.</p>
+          <span class="article-status fill-me">Draft — not yet published</span>
+        </div>
+      </div>
+      <div class="glass card-hover article-card">
+        <div class="article-cover"><span class="a-icon">02</span></div>
+        <div class="article-body">
+          <div class="article-meta"><span class="a-cat">Data Science</span><span>·</span><span>~5 min read</span></div>
+          <h4>The Case for Explainability: Lessons from Spot the Scam</h4>
+          <p>Why SHAP mattered more than raw accuracy for a scam-detection model people had to trust.</p>
+          <span class="article-status fill-me">Draft — not yet published</span>
+        </div>
+      </div>
+      <div class="glass card-hover article-card">
+        <div class="article-cover"><span class="a-icon">03</span></div>
+        <div class="article-body">
+          <div class="article-meta"><span class="a-cat">Innovation</span><span>·</span><span>~8 min read</span></div>
+          <h4>Vedic Ethics as a Framework for AI Governance</h4>
+          <p>How principles like Rita, Ahimsa, and Dharma could inform how AI systems are designed and constrained — the thinking behind VAIBHAVI 2047's ethics layer.</p>
+          <span class="article-status fill-me">Draft — not yet published</span>
+        </div>
+      </div>
+      <div class="glass card-hover article-card">
+        <div class="article-cover"><span class="a-icon">04</span></div>
+        <div class="article-body">
+          <div class="article-meta"><span class="a-cat">Career</span><span>·</span><span>~4 min read</span></div>
+          <h4>What I Learned Moving from Coursework to Real Projects</h4>
+          <p class="fill-me">Add your own reflection here — this title is a placeholder for a personal, specific story.</p>
+          <span class="article-status fill-me">Draft — not yet published</span>
+        </div>
+      </div>
+      <div class="glass card-hover article-card">
+        <div class="article-cover"><span class="a-icon">05</span></div>
+        <div class="article-body">
+          <div class="article-meta"><span class="a-cat">Technology</span><span>·</span><span>~7 min read</span></div>
+          <h4>How Transformers Actually Pay Attention</h4>
+          <p>Breaking down self-attention with a worked example, no jargon left unexplained.</p>
+          <span class="article-status fill-me">Draft — not yet published</span>
+        </div>
+      </div>
+      <div class="glass card-hover article-card">
+        <div class="article-cover"><span class="a-icon">06</span></div>
+        <div class="article-body">
+          <div class="article-meta"><span class="a-cat">India 2047</span><span>·</span><span>~9 min read</span></div>
+          <h4>Designing Technology Missions on a 20-Year Horizon</h4>
+          <p>What it takes to plan a research initiative in five-year phases instead of quarterly sprints.</p>
+          <span class="article-status fill-me">Draft — not yet published</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IDEA VAULT -->
+<section id="ideas">
+  <div class="wrap">
+    <div class="eyebrow">06 · Idea Vault</div>
+    <h2 class="section-title">Original concepts &amp; research proposals</h2>
+    <p class="section-sub">These are concepts and research proposals — not implemented products or companies — presented at the stage they're actually at.</p>
+
+    <div class="glass idea-card">
+      <div class="idea-head">
+        <h3>VAIBHAVI 2047</h3>
+        <span class="idea-status status-concept">CONCEPT · RESEARCH INITIATIVE</span>
+      </div>
+      <div class="idea-body">
+        <div class="idea-field">
+          <h5>Full name</h5>
+          <p>Vedic Artificial Intelligence, Bio-Robotics, Humanity and Environmental Protection Mission</p>
+        </div>
+        <div class="idea-field">
+          <h5>Scope</h5>
+          <p>A civilizational research initiative integrating Vedic philosophy with AI, bio-robotics, environmental science, and space science, organized around the Panch Mahabhuta (five-element) framework and Vedic ethics principles (Rita, Ahimsa, Dharma, Satya, Nishkama Karma).</p>
+        </div>
+        <div class="idea-field">
+          <h5>Timeline &amp; scale</h5>
+          <p>Proposed 2025–2047 timeline across five phases, targeting multi-institutional partnerships including IITs, ISRO, and government bodies.</p>
+        </div>
+        <div class="idea-field">
+          <h5>Current stage</h5>
+          <p>Development and documentation phase — project charter, funding proposal, and software requirements specification drafted; near-term focus on a campus launch event.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass idea-card">
+      <div class="idea-head">
+        <h3>Youth-Gov 2047</h3>
+        <span class="idea-status status-concept">CONCEPT</span>
+      </div>
+      <div class="idea-body">
+        <div class="idea-field">
+          <h5>Idea</h5>
+          <p>A framework for youth participation in governance and innovation policy.</p>
+        </div>
+        <div class="idea-field">
+          <h5>Stage</h5>
+          <p class="fill-me">Add current stage of development.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass idea-card">
+      <div class="idea-head">
+        <h3>Mission T3 — Tech · Talent · Tomorrow</h3>
+        <span class="idea-status status-concept">CONCEPT</span>
+      </div>
+      <div class="idea-body">
+        <div class="idea-field">
+          <h5>Idea</h5>
+          <p class="fill-me">Add a short description of Mission T3's focus.</p>
+        </div>
+        <div class="idea-field">
+          <h5>Stage</h5>
+          <p class="fill-me">Add current stage of development.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass idea-card">
+      <div class="idea-head">
+        <h3>AI Agriculture</h3>
+        <span class="idea-status status-concept">CONCEPT</span>
+      </div>
+      <div class="idea-body">
+        <div class="idea-field">
+          <h5>Idea</h5>
+          <p>AI-driven agriculture and rural technology concepts.</p>
+        </div>
+        <div class="idea-field">
+          <h5>Stage</h5>
+          <p class="fill-me">Add current stage of development.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPLAINERS -->
+<section id="explainers">
+  <div class="wrap">
+    <div class="eyebrow">07 · Explainer Lab</div>
+    <h2 class="section-title">How it actually works</h2>
+    <p class="section-sub">Short, structured breakdowns of systems people use every day. Click to expand.</p>
+    <div class="explainer-list">
+      <div class="glass explainer-row" onclick="this.classList.toggle('open')">
+        <span class="exq">How ChatGPT works</span><span class="exarrow">›</span>
+      </div>
+      <div class="explainer-answer">
+        A prompt is broken into tokens, passed through a transformer network that uses attention to weigh relationships between tokens, and the model outputs a probability distribution over the next token — repeated until a full response is generated.
+        <div class="flow mono">
+          <span>Prompt</span><span class="arrow">→</span><span>Tokenize</span><span class="arrow">→</span><span>Transformer</span><span class="arrow">→</span><span>Attention</span><span class="arrow">→</span><span>Next-token probabilities</span><span class="arrow">→</span><span>Response</span>
+        </div>
+      </div>
+
+      <div class="glass explainer-row" onclick="this.classList.toggle('open')">
+        <span class="exq">How neural networks learn</span><span class="exarrow">›</span>
+      </div>
+      <div class="explainer-answer">
+        A network makes a prediction, compares it to the true answer with a loss function, and backpropagation computes how much each weight contributed to the error — then gradient descent nudges every weight slightly to reduce that error, repeated over many examples.
+        <div class="flow mono"><span>Forward pass</span><span class="arrow">→</span><span>Loss</span><span class="arrow">→</span><span>Backpropagation</span><span class="arrow">→</span><span>Gradient descent</span><span class="arrow">→</span><span>Updated weights</span></div>
+      </div>
+
+      <div class="glass explainer-row" onclick="this.classList.toggle('open')">
+        <span class="exq">How recommendation systems work</span><span class="exarrow">›</span>
+      </div>
+      <div class="explainer-answer">
+        Systems like YouTube or Netflix combine collaborative signals (what similar users watched) with content signals (what the item is about), then rank candidates by predicted engagement for that specific user.
+        <div class="flow mono"><span>User history</span><span class="arrow">→</span><span>Candidate generation</span><span class="arrow">→</span><span>Ranking model</span><span class="arrow">→</span><span>Personalized feed</span></div>
+      </div>
+
+      <div class="glass explainer-row" onclick="this.classList.toggle('open')">
+        <span class="exq">How cloud computing works</span><span class="exarrow">›</span>
+      </div>
+      <div class="explainer-answer">
+        Instead of owning physical servers, you rent compute, storage, and networking from a provider's data centers, provisioned on demand through APIs, and billed by usage rather than ownership.
+        <div class="flow mono"><span>Request</span><span class="arrow">→</span><span>Provider API</span><span class="arrow">→</span><span>Virtualized resources</span><span class="arrow">→</span><span>Data center hardware</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THINKING -->
+<section id="thinking">
+  <div class="wrap">
+    <div class="eyebrow">08 · Thinking</div>
+    <h2 class="section-title">Navneet's Thinking</h2>
+    <p class="section-sub">Perspectives on where technology, education, and India's next two decades intersect.</p>
+    <div class="think-grid">
+      <div class="glass card-hover think-card"><h4>India 2047</h4><p class="fill-me">Add your point of view here.</p></div>
+      <div class="glass card-hover think-card"><h4>Future of Work</h4><p class="fill-me">Add your point of view here.</p></div>
+      <div class="glass card-hover think-card"><h4>Artificial Intelligence</h4><p class="fill-me">Add your point of view here.</p></div>
+      <div class="glass card-hover think-card"><h4>Education</h4><p class="fill-me">Add your point of view here.</p></div>
+      <div class="glass card-hover think-card"><h4>Digital Society</h4><p class="fill-me">Add your point of view here.</p></div>
+      <div class="glass card-hover think-card"><h4>Entrepreneurship</h4><p class="fill-me">Add your point of view here.</p></div>
+    </div>
+
+    <div class="leader-strip">
+      <div class="eyebrow" style="margin-bottom:0;">People &amp; Leadership I Study</div>
+      <div class="glass leader-row"><div class="leader-name">Elon Musk</div><div class="leader-lessons"><span>engineering ambition</span><span>first-principles thinking</span></div></div>
+      <div class="glass leader-row"><div class="leader-name">Mark Zuckerberg</div><div class="leader-lessons"><span>platform building</span><span>software scalability</span></div></div>
+      <div class="glass leader-row"><div class="leader-name">Satya Nadella</div><div class="leader-lessons"><span>organizational transformation</span><span>cloud strategy</span></div></div>
+      <div class="glass leader-row"><div class="leader-name">Sundar Pichai</div><div class="leader-lessons"><span>product leadership</span><span>technology at scale</span></div></div>
+      <div class="glass leader-row"><div class="leader-name">Sam Altman</div><div class="leader-lessons"><span>AI ecosystem building</span><span>research strategy</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERESTS -->
+<section id="interests">
+  <div class="wrap">
+    <div class="eyebrow">— Beyond the Work</div>
+    <h2 class="section-title">Interests</h2>
+    <p class="section-sub fill-me">Replace these with your actual interests — the ones below are placeholders showing the layout.</p>
+    <div class="interest-grid">
+      <div class="glass card-hover interest-card">
+        <div class="i-icon">📖</div>
+        <h4 class="fill-me">Reading</h4>
+        <p class="fill-me">Add topics / genres you read</p>
+      </div>
+      <div class="glass card-hover interest-card">
+        <div class="i-icon">🕉️</div>
+        <h4 class="fill-me">Vedic Philosophy</h4>
+        <p class="fill-me">Add what draws you to it</p>
+      </div>
+      <div class="glass card-hover interest-card">
+        <div class="i-icon">🎥</div>
+        <h4 class="fill-me">Content Creation</h4>
+        <p class="fill-me">Add what you enjoy making</p>
+      </div>
+      <div class="glass card-hover interest-card">
+        <div class="i-icon">♟️</div>
+        <h4 class="fill-me">Add an interest</h4>
+        <p class="fill-me">Add a short note</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="brand"><span class="brand-mark">NK</span> NAVNEET KUMAR</div>
+      <div class="foot-links">
+        <a href="#" class="fill-me">GitHub →</a>
+        <a href="#" class="fill-me">LinkedIn →</a>
+        <a href="#" class="fill-me">YouTube →</a>
+        <a href="#" class="fill-me">Email →</a>
+      </div>
+    </div>
+    <p class="foot-note">Build → Learn → Explain → Create → Publish → Impact. Site content current as of build date — replace fill-me markers with verified details before publishing.</p>
+  </div>
+</footer>
+
+<script>
+  // tabs
+  document.querySelectorAll('.tab-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+  // close mobile nav on link click
+  document.querySelectorAll('.nav-links a').forEach(a=>{
+    a.addEventListener('click', ()=> document.querySelector('.nav-links').classList.remove('open'));
+  });
+</script>
+</body>
+</html>
