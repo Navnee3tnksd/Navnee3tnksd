@@ -182,6 +182,38 @@ navneet = {
 
 <div align="center">
 
+## `~/` skill radar
+
+<table>
+<tr>
+<td width="50%" align="center" valign="middle">
+
+<!-- Self-rated radar - edit assets/skills.json, the workflow redraws it -->
+<picture>
+  <source media="(prefers-color-scheme: dark)"  srcset="radar-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="radar-light.svg">
+  <img src="radar-dark.svg" width="400" alt="skill radar chart">
+</picture>
+
+</td>
+<td width="50%" align="center" valign="middle">
+
+<!-- Live radar built from real language byte counts across your repos -->
+<picture>
+  <source media="(prefers-color-scheme: dark)"  srcset="radar-langs-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="radar-langs-light.svg">
+  <img src="radar-langs-dark.svg" width="400" alt="language radar chart">
+</picture>
+
+</td>
+</tr>
+</table>
+
+</div>
+
+---
+
+<div align="center">
 
 # 🎓 Education
 
