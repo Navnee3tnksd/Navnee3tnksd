@@ -1,38 +1,135 @@
-<!-- =========================
-     NAVNEET KUMAR — GITHUB PROFILE
-     ========================= -->
+<!-- ============================================================
+ NAVNEET KUMAR | PREMIUM GITHUB PROFILE README
+ GitHub Username: Navnee3tnksd
+
+ IMPORTANT:
+ 1. Create repository: Navnee3tnksd/Navnee3tnksd
+ 2. Add your portrait photo as:portrait_sticker.svg
+ 3. Add your AI image as:nksd.png
+============================================================ -->
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=230&section=header&text=Navneet%20Kumar&fontSize=55&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=AI%20%7C%20Machine%20Learning%20%7C%20Data%20Science%20%7C%20Generative%20AI&descAlignY=60&descSize=20" width="100%"/>
+<!-- ========================= -->
+<!-- PREMIUM HEADER -->
+<!-- ========================= -->
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,50:2563EB,100:7C3AED&height=240&section=header&text=Navneet%20Kumar&fontSize=58&fontColor=FFFFFF&animation=fadeIn&fontAlignY=35&desc=AI%20Engineer%20%E2%80%A2%20Machine%20Learning%20%E2%80%A2%20Data%20Science%20%E2%80%A2%20Generative%20AI&descAlignY=58&descSize=18" width="100%" />
 
 <br>
 
-### 🚀 AI/ML • Data Science • Deep Learning • Cloud • Analytics
+<!-- ========================= -->
+<!-- PROFILE PORTRAIT -->
+<!-- ========================= -->
 
-<p>
-  <img src="https://komarev.com/ghpvc/?username=Navnee3tnksd&label=Profile%20Views&color=blueviolet&style=for-the-badge" />
-  <img src="https://img.shields.io/github/followers/Navnee3tnksd?label=Followers&style=for-the-badge&color=blue" />
-  <img src="https://img.shields.io/github/stars/Navnee3tnksd?label=Stars&style=for-the-badge&color=yellow" />
-</p>
+<img
+  src="nksd.png"
+  width="260"
+  alt="Navneet Kumar"
+/>
 
-<p>
-<a href="https://www.linkedin.com/in/navneet-kumar-a7816529a/">
-<img src="https://img.shields.io/badge/LINKEDIN-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
-</a>
+<br><br>
+
+<!-- ========================= -->
+<!-- ANIMATED IDENTITY -->
+<!-- ========================= -->
 
 <a href="https://github.com/Navnee3tnksd">
-<img src="https://img.shields.io/badge/GITHUB-Follow-181717?style=for-the-badge&logo=github&logoColor=white"/>
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=26&duration=2600&pause=900&color=38BDF8&center=true&vCenter=true&width=750&lines=Navneet+Kumar;AI+%7C+Machine+Learning+%7C+Data+Science;Generative+AI+%7C+Deep+Learning+%7C+Analytics;Turning+Data+Into+Intelligence;01100001+01101001+00100000+01100110+01110101+01110100+01110101+01110010+01100101" alt="Typing SVG" />
 </a>
 
-<a href="mailto:YOUR_EMAIL@gmail.com">
-<img src="https://img.shields.io/badge/EMAIL-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
+<br><br>
+
+<!-- ========================= -->
+<!-- SOCIAL LINKS -->
+<!-- ========================= -->
+
+<a href="https://github.com/Navnee3tnksd">
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
 </a>
-</p>
+
+<a href="https://www.linkedin.com/in/navneet-kumar-a7816529a/">
+  <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
+</a>
+
+<a href="mailto:NAVNEETKUMARNSD03@gmail.com">
+  <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
+</a>
+
+<a href="https://www.kaggle.com/navneetkumarnksd">
+  <img src="https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white"/>
+</a>
+
+<a href="https://www.instagram.com/navnee3tkumar569">
+  <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/>
+</a>
+
+<a href="https://leetcode.com/navnee3tnksd">
+  <img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black"/>
+</a>
+
+<br><br>
+
+<img src="https://komarev.com/ghpvc/?username=Navnee3tnksd&style=for-the-badge&color=0EA5E9&label=PROFILE+VIEWS"/>
+
+<img src="https://img.shields.io/github/followers/Navnee3tnksd?label=Followers&style=for-the-badge&color=7C3AED"/>
+
+<img src="https://img.shields.io/github/stars/Navnee3tnksd?label=GitHub%20Stars&style=for-the-badge&color=F59E0B"/>
 
 </div>
 
 ---
+
+<div align="center">
+
+# `~/` whoami
+
+</div>
+
+```python
+navneet = {
+
+    "name": "Navneet Kumar",
+
+    "username": "Navnee3tnksd",
+
+    "role": [
+        "AI / Machine Learning Engineer",
+        "Data Science Enthusiast",
+        "Generative AI Explorer"
+    ],
+
+    "education": [
+        "B.Sc. Computer Science & Data Analytics — IIT Patna",
+        "Data Science & Machine Learning Learning Experience — IIT Mandi"
+    ],
+
+    "core_domains": [
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Deep Learning",
+        "Generative AI",
+        "Natural Language Processing",
+        "Computer Vision",
+        "Reinforcement Learning",
+        "Data Science",
+        "Cloud AI"
+    ],
+
+    "currently_learning": [
+        "Advanced Machine Learning",
+        "Deep Learning",
+        "Generative AI",
+        "MLOps",
+        "Cloud AI",
+        "Data Engineering"
+    ],
+
+    "mission":
+        "Build intelligent, scalable and real-world AI systems."
+}<!-- =========================
+     NAVNEET KUMAR — GITHUB PROFILE
+     ========================= -->
 
 # 🌸 About Me
 
