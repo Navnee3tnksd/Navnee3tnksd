@@ -172,7 +172,16 @@ navneet = {
 >
 > From building Machine Learning models and Deep Learning systems to developing interactive analytics dashboards and AI applications, I enjoy working across the complete data-to-deployment lifecycle.
 
+---## `~/` toolbox
+
+<img src="https://skillicons.dev/icons?i=cpp,js,ts,react,nextjs,nodejs,tailwind,postgres,mongodb,jwt,oauth,git,github,vscode,html,css&perline=11" alt="tech stack">
+
+</div>
+
 ---
+
+<div align="center">
+
 
 # 🎓 Education
 
