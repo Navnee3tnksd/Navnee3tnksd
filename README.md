@@ -214,7 +214,12 @@ navneet = {
 ---
 
 <div align="center">
+## `~/` contribution calendar
 
+<!-- 3D isometric calendar, regenerated every 6h by .github/workflows/metrics.yml -->
+<img src="metrics.isocalendar.svg" width="90%" alt="3D isometric contribution calendar">
+
+<br><br>
 # 🎓 Education
 
 ### 🏛️ Indian Institute of Technology Patna
